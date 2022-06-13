@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cards</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="../FrontEnd2/style.css">
+
+    <style>
+        #frame .card{margin: 25px 0 5px 0;}
+
+    </style>
+
+    </head>
+  <body>
+
+    <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            
+            <div class="card">
+                <div class="card-header">Adicione seus Heróis</div>
+                <div class="card-body px-3">
+                  <div class="mb-3">
+                    <label for="titulo" class="form-label">Titulo</label>
+                    <input type="text" class="form-control" id="titulo" placeholder="Titulo">
+                  </div>
+                  <div class="mb-3">
+                    <label for="descricao" class="form-label">Descrição</label>
+                    <input type="text" class="form-control" id="descricao" placeholder="Descrição">
+                  </div>
+                  <div class="mb-3">
+                    <label for="url" class="form-label">Url da Imagem</label>
+                    <input type="text" class="form-control" id="url" placeholder="Url da Imagem">
+                  </div>
+
+                  <label for="cor" class="form-label">Cor para o Card do Herói</label>
+                  <input type="color" class="form-control form-control-color" id="cor" value="#563d7c" title="Escolha uma cor">
+
+                  <button type="button" id="botao" class="btn btn-primary float-end">Adicionar</button>
+                </div>
+              </div>
+
+
+          </div>
+          <div class="col-md-7">
+                <div class="row" id="frame">
+                </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+          var botao = document.getElementById('botao');
+
+          botao.addEventListener("click", function(){
+            var titulo = document.getElementById('titulo').value;
+            var descricao = document.getElementById('descricao').value;
+            var url = document.getElementById('url').value;
+            var quadro = document.getElementById('frame');
+            var cor = document.getElementById('cor').value;
+console.log(cor);
+            var card =`<div class="col-md-5">
+            <div class="card" style="background-color: ${cor};">
+                <img src="${url}" class="card-img-top" alt="${titulo}">
+                <div class="card-body">
+                    <h5 class="card-title">${titulo}</h5>
+                    <p class="card-text">${descricao}</p>
+                </div>
+            </div>
+        </div>`; 
+
+            quadro.innerHTML +=card;
+
+            //document.getElementsByClassName('card-heroi').style.backgroundColor = cor;
+
+            
+          });
+
+
+
+      </script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
