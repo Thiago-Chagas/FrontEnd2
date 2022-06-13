@@ -6,9 +6,16 @@
     <title>Cards</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="stylesheet" href="../FrontEnd2/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        #frame .card{margin: 25px 0 5px 0;}
+        #frame .card
+        {
+          
+          box-sizing: border-box;
+        }
 
     </style>
 
@@ -24,11 +31,11 @@
                 <div class="card-body px-3">
                   <div class="mb-3">
                     <label for="titulo" class="form-label">Titulo</label>
-                    <input type="text" class="form-control" id="titulo" placeholder="Titulo">
+                    <input type="text" class="form-control" id="titulo" placeholder="Ex: Capitão América">
                   </div>
                   <div class="mb-3">
                     <label for="descricao" class="form-label">Descrição</label>
-                    <input type="text" class="form-control" id="descricao" placeholder="Descrição">
+                    <input type="text" class="form-control" id="descricao" placeholder="Supersoldado, é dono de força, agilidade, resistência, reflexos e capacidade de cura superiores aos dos seres humanos normais">
                   </div>
                   <div class="mb-3">
                     <label for="url" class="form-label">Url da Imagem</label>
@@ -36,17 +43,16 @@
                   </div>
 
                   <label for="cor" class="form-label">Cor para o Card do Herói</label>
-                  <input type="color" class="form-control form-control-color" id="cor" value="#563d7c" title="Escolha uma cor">
+                  <input type="color" class="form-control form-control-color" id="cor" value="#C74848" title="Escolha uma cor">
 
-                  <button type="button" id="botao" class="btn btn-primary float-end">Adicionar</button>
+                  <button type="submit" id="botao" class="btn btn-danger float-end">Adicionar</button>
                 </div>
-              </div>
+            </div>
 
 
           </div>
           <div class="col-md-7">
-                <div class="row" id="frame">
-                </div>
+                <div class="row" id="frame"></div>
           </div>
         </div>
       </div>
@@ -60,16 +66,19 @@
             var url = document.getElementById('url').value;
             var quadro = document.getElementById('frame');
             var cor = document.getElementById('cor').value;
-console.log(cor);
-            var card =`<div class="col-md-5">
-            <div class="card" style="background-color: ${cor};">
-                <img src="${url}" class="card-img-top" alt="${titulo}">
-                <div class="card-body">
-                    <h5 class="card-title">${titulo}</h5>
-                    <p class="card-text">${descricao}</p>
-                </div>
-            </div>
-        </div>`; 
+
+            var card =`
+            <div class="col-md-5" >
+              <div class="card" style="background-color: ${cor}; width: 250px;height: 300px; padding:5px; ">
+                  <img src="${url}" class="card-img-top " alt="${titulo}" style="width:100%">
+                  <div style="width:100%; overflow: hidden;">
+                      <h5 class="card-title">${titulo}</h5>
+                      <p class="card-text">${descricao}</p>
+                  </div>
+              </div>
+            </div>`; 
+
+            
 
             quadro.innerHTML +=card;
 
@@ -77,14 +86,7 @@ console.log(cor);
 
             
           });
-
-
-
       </script>
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   </body>
 </html>

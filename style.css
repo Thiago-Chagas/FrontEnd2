@@ -1,20 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@400;700&display=swap");
+
 *{
     margin: 0;
     box-sizing: border-box;
     padding: 0;
+    font-family: 'Roboto' sans-serif;
 }
 
 body{
-    background-color: rgba(128, 128, 128, 0.717);
+    background-color: rgba(15, 14, 14, 0.717);
 }
 
 .card{
-    font-family: 'Times New Roman', Times, serif;
-    background-color: rgba(0, 0, 0, 0.89);
+    font-family: 'Roboto' sans-serif;
+    background-color: rgba(55, 54, 54, 0.89);
     color: white;
     font-size: 20px;
-    margin-top: 25px;
-}    
+    margin-top: 25%;
+} 
+
 
 #botao:hover{
 font-size: 17px;
