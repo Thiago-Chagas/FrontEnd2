@@ -21,8 +21,8 @@
 
     </head>
   <body>
-
-    <div class="container">
+    <form action="" class="formulario">
+      <div class="container">
         <div class="row">
           <div class="col-md-5">
             
@@ -42,10 +42,10 @@
                     <input type="text" class="form-control" id="url" placeholder="Url da Imagem">
                   </div>
 
-                  <label for="cor" class="form-label">Cor para o Card do Herói</label>
+                  <label for="cor" class="form-label">Cor para o Card</label>
                   <input type="color" class="form-control form-control-color" id="cor" value="#C74848" title="Escolha uma cor">
 
-                  <button type="submit" id="botao" class="btn btn-danger float-end">Adicionar</button>
+                  <button type="submit" id="botao" class="btn btn-danger float-end">Adicionar</button>  
                 </div>
             </div>
 
@@ -56,11 +56,16 @@
           </div>
         </div>
       </div>
+    
+    </form>
+      
+    
 
       <script>
           var botao = document.getElementById('botao');
 
-          botao.addEventListener("click", function(){
+          botao.addEventListener("click", function(evento){
+            evento.preventDefault()
             var titulo = document.getElementById('titulo').value;
             var descricao = document.getElementById('descricao').value;
             var url = document.getElementById('url').value;
@@ -78,13 +83,9 @@
               </div>
             </div>`; 
 
-            
-
             quadro.innerHTML +=card;
 
             //document.getElementsByClassName('card-heroi').style.backgroundColor = cor;
-
-            
           });
       </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
